@@ -1,0 +1,278 @@
+<html>
+	<head>
+		<title>Geocontrole Web</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+		<script src="jquery.slim.min.js"></script>
+		<script src="bootstrap.bundle.min.js"></script>
+		<script src="bootstrap.min.js"></script>
+	</head>
+	<body class style>
+		<!-- MENU -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">GeoControle</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarColor03">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="index.html">Command Input</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="shplist">Generated Shapefile</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!-- END MENU -->
+		<div class="container-fluid">
+			<div class="row justify-content-md-center"">
+				<div class="col-md-8">
+					<form class="card bg-light mb-3" method="POST" action="/execute" id="cmd">
+						<div class="card-header"><h1>Geocontrole webservice input</h1></div>
+						<div class="card-body">
+							<fieldset>
+								<div class="form-group">
+									<label for="imglist">Images to analyze</label>
+									<input type="text" class="form-control" id="imglist" name="imglist" aria-describedby="imglistHelp" placeholder="IMG1 Path,IMG2 Path,..." value="">
+									<small id="imglistHelp" class="form-text text-muted">The images should be in the server. Separate each image path by a comma [ , ].</small>
+								</div>
+								<div class="form-group">
+									<label for="rlwshp">Railway shapefile</label>
+									<input type="text" class="form-control" id="rlwshp" name="rlwshp" aria-describedby="rlwshpHelp" placeholder="Railway.shp" value="">
+									<small id="rlwshpHelp" class="form-text text-muted">The server path of the railway shapefile. This is used for internal validation.</small>
+								</div>
+								<hr>
+								<h3 class="card-title"><strong>Task</strong></h3>
+								<div class="form-group">
+									<div class="custom-control custom-radio">
+										<input type="radio" id="task1" name="task" class="custom-control-input" checked="" value="analyze">
+										<label class="custom-control-label" for="task1">Analyze(Bridge Detection or Erosion Segmentation).</label>
+									</div>
+									<div class="custom-control custom-radio">
+										<input type="radio" id="task2" name="task" class="custom-control-input" value="finetune">
+										<label class="custom-control-label" for="task2">Model Improvement.</label>
+									</div>
+								</div>
+								<div id="tasktarget1" style="">
+									<h3 class="card-title"><strong>Task Target</strong></h3>
+									<div class="form-group">
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="target1" name="target" value="bridge" checked="">
+											<label class="custom-control-label" id="target1Label" for="target1">Bridge Detection</label>
+										</div>
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="target2" name="target" value="erosion">
+											<label class="custom-control-label" id="target2Label" for="target2">Erosion Segmentation</label>
+										</div>
+									</div>
+									<small id="task2Help" class="form-text text-muted">Select one task to perform.</small>
+								</div>
+								<br>
+								<!-- <div id="tasktarget2" style="display: none">
+										<h3 class="card-title"><strong>Task Target</strong></h3>
+										<div class="form-group">
+												<div class="custom-control custom-radio">
+														<input type="radio" name="target2" class="custom-control-input" id="target12" value="target1" checked="">
+														<label class="custom-control-label" id="target12Label" for="target12">Bridge Model</label>
+												</div>
+												<div class="custom-control custom-radio">
+														<input type="radio" name="target2" class="custom-control-input" id="target22" value="target2">
+														<label class="custom-control-label" id="target22Label" for="target22">Erosion Model</label>
+												</div>
+												<small id="task2Help" class="form-text text-muted">Select in wich model to perform the improvement. Obs: the annotations should be compatible with the task.</small>
+										</div>
+								</div> -->
+								<div class="form-group">
+									<label for="outname1">Output shapefile name</label>
+									<input type="text" class="form-control" id="outname1" name="outname1"aria-describedby="imglistHelp" placeholder="rlw-rois" value="">
+									<small id="outname1Help" class="form-text text-muted">The shapefile generated will have this name.</small>
+								</div><!--
+								<div class="form-group" style="display:none" id="outname2div">
+										<label for="outname2">Output shapefile name [Erosion Task]</label>
+										<input type="text" class="form-control" id="outname2" name="outname2" aria-describedby="imglistHelp" placeholder="rlw-erosions" value="">
+										<small id="outname2Help" class="form-text text-muted">The shapefile generated will have this name.</small>
+								</div> -->
+								<div class="form-group" id='userannot' style="display: none">
+									<label for="inputshp">User Annotations</label>
+									<input type="text" class="form-control" id="inputshp" name="inputshp" aria-describedby="inputshpHelp" placeholder="roi-annotations.shp" value="">
+									<small id="inputshpHelp" class="form-text text-muted">The user annotated regions of interest's shapefile's path.</small>
+								</div>
+								<div class="form-group float-right">
+									<input id="send" class="btn btn-primary btn-lg" type="button" value="Execute"/>
+								</div>
+								<!-- <div class="form-group">
+													<label for="inputshpFile">User Annotations</label>
+													<div class="input-group mb-3">
+																		<div class="custom-file">
+																							<input type="file" class="custom-file-input" id="inputshpFile">
+																							<label class="custom-file-label" for="inputshpFile">Choose file</label>
+																		</div>
+													</div>
+													<small id="inputshpFileHelp" class="form-text text-muted">The user annotated regions of interest's shapefile.</small>
+								</div> -->
+							</fieldset>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="modal" id="infoModal">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header bg-info text-white">
+						<h3 class="modal-title">Request Check</h3>
+						<button name='closeModal' type="button" class="close" data-dismiss="infoModal" aria-label="Close">
+						<span class='text-white' aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p class="lead">Your requisition seems fine :D</p>
+        				<p><mark><em>It's gonna take a while to process. After the server finish you can check if your shapefile is in the tab <strong>Generated Shapefile</strong></em></mark></p>
+						<p>Knowing that it's gonna take a while, please verify if the information is correct.</p>
+						<h4>Task</h4>
+						<p id='task-info'></p>
+						<h4>Images</h4>
+						<ul id='imglist-li'>
+							
+						</ul>
+						<h4>Railway shapefile</h4>
+						<ul id='rlwshp-li'>
+							
+						</ul>
+						<div id='userannot-info'>
+							<h4>User annotation</h4>	
+							<ul id='userannot-li'>
+								
+							</ul>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button name='closeModal' type="button" class="btn btn-secondary float-left" data-dismiss="infoModal">Close</button>
+						<button id="confirm" type="button" class="btn btn-primary">Confirm</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			$('button[name=closeModal]').click(function(){
+				$('#infoModal').modal('hide');
+			});
+			$('#infoModal').on('hidden.bs.modal', function(){
+				$('#task-info').text('');
+				$('#imglist-li').empty();
+				$('#rlwshp-li').empty();
+				$('#userannot-li').empty();
+			});
+
+			$('#confirm').click(function(){
+				document.getElementById('cmd').submit()
+			});
+			$('#send').click(function(){
+				if(validate()){
+					t = ''
+					if($('#task1')[0].checked){
+						t += '1'
+					}
+					else{
+						t += '0'
+					}
+					if($('#target1')[0].checked){
+						t += '1'
+					}
+					else{
+						t += '0'
+					}
+
+					if(t == '11'){
+						$('#task-info').text('Bridge Detection')
+					}
+					else if(t == '10'){
+						$('#task-info').text('Erosion Segmentation')
+					}
+					else if(t == '01'){
+						$('#task-info').text('Bridge Model Improvement')
+					}
+					else if(t == '00'){
+						$('#task-info').text('Erosion Model Improvement')
+					}
+
+					imgs = $('#imglist').val().split(',');
+					for(var i = 0; i < imgs.length; i++){
+						$('#imglist-li').append('<li>' + imgs[i] + '</li>');
+					}
+					
+					rlwshp = $('#rlwshp').val();
+					$('#rlwshp-li').append('<li>' + rlwshp + '</li>');
+					
+					if($('#inputshp').is(':visible')){
+						$('#userannot-info').show();
+						inputshp = $('#inputshp').val();
+						$('#userannot-li').append('<li>' + inputshp + '</li>');	
+					}
+					else{
+						$('#userannot-info').hide();
+					}
+
+					$('#infoModal').modal('show');
+				}
+			});
+			$('#task1').change(function(){
+								$('#target1Label').text('Bridge Detection');
+				$('#target2Label').text('Erosion Segmentation');
+				$('#task2Help').text('Select one task to perform.');
+				// $('#tasktarget2').hide();
+				// $('#tasktarget1').show();
+				$('#userannot').hide();
+			});
+			$('#task2').change(function(){
+								$('#target1Label').text('Bridge Model');
+				$('#target2Label').text('Erosion Model');
+				$('#task2Help').text('Select in wich model to perform the improvement. Obs: the annotations should be compatible with the task.');
+				// $('#tasktarget1').hide();
+				// $('#tasktarget2').show();
+				$('#userannot').show();
+			});
+			// $('input[type=checkbox]').change(function(){
+				// 	var ckd = 0;
+				// 	cheks = $('input[type=checkbox]');
+				// 	for(var i = 0; i < cheks.length; i++){
+					// 		if(cheks[i].checked){
+						// 			ckd++;
+					// 		}
+				// 	}
+				// 	if(ckd == 2){
+					// 		$("label[for=outname1]")[0].innerHTML += ' [Bridge Task]'
+					// 		$("#outname1").attr('placeholder' , 'rlw-bridges')
+					// 		$("#outname2div").show();
+				// 	}
+				// 	else{
+					// 		$("label[for=outname1]")[0].innerHTML = 'Output shapefile name'
+					// 		$("#outname1").attr('placeholder', 'rlw-rois')
+					// 		$("#outname2div").hide();
+				// 	}
+			// });
+			$('input[type=text]').change(function() {
+								$(this).removeClass('is-invalid')
+			});
+		</script>
+		<script type="text/javascript">
+			function validate(){
+				textInputs = $('#cmd').find('input[type=text]');
+				ok = true;
+				for(i = 0; i < textInputs.length; i++){
+					if($(textInputs[i]).is(':visible') && textInputs[i].value.trim().length == 0){
+						$(textInputs[i]).addClass('is-invalid');
+						ok = false;
+					}
+					if(! $(textInputs[i]).is(':visible')){
+						textInputs[i].value = " "
+					}
+				}
+				
+				return ok;
+			}
+		</script>
+	</body>
+</html>
