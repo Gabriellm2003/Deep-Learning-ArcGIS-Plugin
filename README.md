@@ -12,6 +12,16 @@ step, the bounding-boxes of detected bridges in the patches are merged into a si
 
 All steps of the framework are implemented to work in ArcGIS via a plugin, and there is also a web service implementation of it in this repository. 
 
+# Datasets
+
+Both datasets are publicly available for download. To dowload the railway bridge detection dataset, please use the following link:
+
+http://www.patreo.dcc.ufmg.br/2019/07/10/bridge-dataset/
+
+To download the railway bridge erosion dataset, please use the following link:
+
+INSERT LINK HERE
+
 # Plugin instalation
 
 The plugin installation is quite easy. The only step needed is to copy this repository to the folder that ArcGis is installed. Typically it can be found in C:\Users\Usename\Documents\ArcGIS DocumentosnArcGIS).
