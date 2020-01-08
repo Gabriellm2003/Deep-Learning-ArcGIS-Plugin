@@ -40,16 +40,16 @@ Please cite us
 
 @inproceedings{nogueira2019tool,
 
-  title={A Tool for Bridge Detection in Major Infrastructure Works Using Satellite Images},
+             title={A Tool for Bridge Detection in Major Infrastructure Works Using Satellite Images},
   
-  author={Nogueira, Keiller and Cesar, Caio and Gama, Pedro HT and Machado, Gabriel LS and dos Santos, Jefersson A},
+             author={Nogueira, Keiller and Cesar, Caio and Gama, Pedro HT and Machado, Gabriel LS and dos Santos, Jefersson A},
   
-  booktitle={2019 XV Workshop de Vis{\~a}o Computacional (WVC)},
+             booktitle={2019 XV Workshop de Vis{\~a}o Computacional (WVC)},
   
-  pages={72--77},
+             pages={72--77},
   
-  year={2019},
+             year={2019},
   
-  organization={IEEE}
+             organization={IEEE}
 
 }
