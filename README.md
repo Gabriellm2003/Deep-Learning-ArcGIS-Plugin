@@ -4,6 +4,8 @@
 
 This framework was proposed to train and infer CNNs for the tasks of semantic segmentation and object detection using large scale images and annotations made using shapefiles. 
 
+![alt text](images/./2layer.jpg)
+
 All steps of the framework are implemented to work in ArcGIS via a plugin, and there is also a web service implementation of it in this repository. 
 
 # Plugin instalation
