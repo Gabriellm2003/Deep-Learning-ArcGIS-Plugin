@@ -22,3 +22,8 @@ First, for image segmentation, you will need to edit the file segmentationTools.
 
 The same process can be done for the web service editing the file /src/webservice/server.py with your network commands.
 In this implementation, there isn`t an example code for object detection, but for image segmentation there is one, using Mask-R-CNN. 
+
+
+# Plugin Use
+
+The use of the plugin is quite simple since it has an intuitive interface. The only thing you have to do is to select the desired option and fill all the options with the desired data. The figures bellow illustrates the plugin interface and the videos contain a tutorial showing how to use them.
