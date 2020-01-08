@@ -2,7 +2,7 @@
 
 # The framework's pipeline
 
-This framework was proposed to train and infer CNNs for the tasks of semantic segmentation and object detection using large scale images and annotations made using shapefiles. 
+This framework was proposed to train and infer CNNs for the tasks of semantic segmentation and object detection using large scale images and annotations made using shapefiles. The figure bellow illustrates how the framework for object detection works, understanding how it wotks, it's analogue to figure out how it can be usedfor semantic segmantation.
 
 ![alt text](images/./2layer.jpg)
 
