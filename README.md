@@ -1,4 +1,4 @@
-# Deep-Learning-ArcGIS-Plugin
+# [ArcGIS Plugin] Deep Learning Framework for Large Scale Images
 
 # The framework pipeline
 
