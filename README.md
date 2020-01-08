@@ -6,6 +6,10 @@ This framework was proposed to train and infer CNNs for the tasks of semantic se
 
 ![alt text](images/./2layer.jpg)
 
+In the first phase, the input image mosaic are split into overlapping patches, that are generated taking into account the geospatial data (that has the coordinates of the target, in the case of the figure a railway), i.e., the pathway is always in the center of these patches. In the second step of the proposed tool, those patches are processed by a deep
+learning-based approach, that detects the target object (in the case of the figure, bridges). Finally, in the third
+step, the bounding-boxes of detected bridges in the patches are merged into a single final result.
+
 All steps of the framework are implemented to work in ArcGIS via a plugin, and there is also a web service implementation of it in this repository. 
 
 # Plugin instalation
