@@ -39,20 +39,20 @@ The use of the plugin is quite simple since it has an intuitive interface. The o
 
 In case of any doubts, please e-mail us:
 
-Keiller Nogueira - keiller.nogueira@dcc.ufmg.br
+       Keiller Nogueira - keiller.nogueira@dcc.ufmg.br
 
-Caio Cesar - caiosilva@dcc.ufmg.br
+       Caio Cesar - caiosilva@dcc.ufmg.br
 
-Gabriel L. S. Machado - gabriel.lucas@dcc.ufmg.br
+       Gabriel L. S. Machado - gabriel.lucas@dcc.ufmg.br
 
-Pedro H. T. Gama - phtg@dcc.ufmg.br
+       Pedro H. T. Gama - phtg@dcc.ufmg.br
 
-Jefersson A. dos Santos - jefersson@dcc.ufmg.br
+       Jefersson A. dos Santos - jefersson@dcc.ufmg.br
 
 
 If you have interest in other works of our laboratory, please visit our website:
 
-http://www.patreo.dcc.ufmg.br/
+       http://www.patreo.dcc.ufmg.br/
 
 Please cite us
 
