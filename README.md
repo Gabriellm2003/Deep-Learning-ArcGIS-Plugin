@@ -68,7 +68,7 @@ In case of any doubts, please e-mail us:
 
 If you have interest in other works of our laboratory, please visit our website:
 
-       http://www.patreo.dcc.ufmg.br/
+http://www.patreo.dcc.ufmg.br/
 
 Please cite us
 
