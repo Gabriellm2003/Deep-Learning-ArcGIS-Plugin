@@ -38,7 +38,7 @@ The use of the plugin is quite simple since it has an intuitive interface. The o
 
 Please cite us
 
-@inproceedings{nogueira2019tool,
+       @inproceedings{nogueira2019tool,
 
              title={A Tool for Bridge Detection in Major Infrastructure Works Using Satellite Images},
   
@@ -52,4 +52,4 @@ Please cite us
   
              organization={IEEE}
 
-}
+       }
