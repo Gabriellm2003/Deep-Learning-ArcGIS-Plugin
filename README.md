@@ -1,6 +1,6 @@
 # [ArcGIS Plugin] Deep Learning Framework for Large Scale Images
 
-# The framework pipeline
+# The framework's pipeline
 
 This framework was proposed to train and infer CNNs for the tasks of semantic segmentation and object detection using large scale images and annotations made using shapefiles. 
 
@@ -34,3 +34,15 @@ In this implementation, there isn`t an example code for object detection, but fo
 The use of the plugin is quite simple since it has an intuitive interface. The only thing you have to do is to select the desired option and fill all the options with the desired data. The figures bellow illustrates the plugin interface.
 ![alt text](images/./arcgis_usetrain.png)
 ![alt text](images/./arcgis_use2.png)
+
+
+Please cite us
+
+@inproceedings{nogueira2019tool,
+  title={A Tool for Bridge Detection in Major Infrastructure Works Using Satellite Images},
+  author={Nogueira, Keiller and Cesar, Caio and Gama, Pedro HT and Machado, Gabriel LS and dos Santos, Jefersson A},
+  booktitle={2019 XV Workshop de Vis{\~a}o Computacional (WVC)},
+  pages={72--77},
+  year={2019},
+  organization={IEEE}
+}
