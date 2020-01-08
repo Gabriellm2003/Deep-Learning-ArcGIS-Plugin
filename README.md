@@ -18,5 +18,7 @@ python3 server.py <port_number>
 
 To use your network and integrate it into the framework, you will need to edit some files.
 First, for image segmentation, you will need to edit the file segmentationTools.py. The only alteration you need to perform is to change the cmd variable to handle the command used to run your network. For object detection, the only difference is that you have to edit a different file, called detectionTools.py.
+
+
 The same process can be done for the web service editing the file /src/webservice/server.py with your network commands.
 In this implementation, there isn`t an example code for object detection, but for image segmentation there is one, using Mask-R-CNN. 
