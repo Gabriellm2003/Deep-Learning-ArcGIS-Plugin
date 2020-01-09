@@ -20,7 +20,7 @@ http://www.patreo.dcc.ufmg.br/2019/07/10/bridge-dataset/
 
 To download the railway bridge erosion dataset, please use the following link:
 
-INSERT LINK HERE
+https://drive.google.com/file/d/1LE9tFt3VMka9hQtGnd7QkAQhZsU_COEa/view?usp=sharingINSERT LINK HERE
 
 # Plugin instalation
 
