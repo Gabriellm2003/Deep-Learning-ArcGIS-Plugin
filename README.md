@@ -18,7 +18,7 @@ Both datasets are publicly available for download. To dowload the railway bridge
 
 http://www.patreo.dcc.ufmg.br/2019/07/10/bridge-dataset/
 
-To download the railway bridge erosion dataset, please use the following link:
+To download the railway erosion dataset, please use the following link:
 
 https://drive.google.com/file/d/1LE9tFt3VMka9hQtGnd7QkAQhZsU_COEa/view?usp=sharing
 
