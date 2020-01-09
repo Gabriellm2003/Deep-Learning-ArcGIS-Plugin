@@ -8,7 +8,9 @@ This framework was proposed to train and infer CNNs for the tasks of semantic se
 
 Looking at the figure, in the first phase, the input image mosaic are split into overlapping patches, that are generated taking into account the geospatial data (that has the coordinates of the target, in the case of the figure a railway), i.e., the pathway is always in the center of these patches. In the second step of the proposed tool, those patches are processed by a deep
 learning-based approach, that detects the target object (in the case of the figure, bridges). Finally, in the third
-step, the bounding-boxes of detected bridges in the patches are merged into a single final result.
+step, the bounding-boxes of detected bridges in the patches are merged into a single final result.The figure bellow ilustrates the samae plugin, but for semantic segmantiation use.
+
+![alt text](images/./framework.png)
 
 All steps of the framework are implemented to work in ArcGIS via a plugin, and there is also a web service implementation of it in this repository. 
 
@@ -24,7 +26,7 @@ https://drive.google.com/file/d/1LE9tFt3VMka9hQtGnd7QkAQhZsU_COEa/view?usp=shari
 
 # Plugin instalation
 
-The plugin installation is quite easy. The only step needed is to copy this repository to the folder that ArcGis is installed. Typically it can be found in C:\Users\Usename\Documents\ArcGIS DocumentosnArcGIS).
+The plugin installation is quite easy. The only step needed is to copy this repository to the folder that ArcGis is installed. Typically it can be found in C:\Users\Usename\Documents\ArcGIS.
 After that, open ArcGIS software and you'll be able to visualize the plugin on the right bar, as can be seen in the figure below.
 ![alt text](images/./arcgis_plugin1.png)
 
