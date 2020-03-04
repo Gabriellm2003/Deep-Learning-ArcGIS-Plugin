@@ -75,16 +75,16 @@ http://www.patreo.dcc.ufmg.br/
 Please cite us
 
 
-@article{nogueira2020facing,
-  title={Facing Erosion Identification in Railway Lines Using Pixel-Wise Deep-Based Approaches},
-  author={Nogueira, Keiller and LS Machado, Gabriel and HT Gama, Pedro and CV da Silva, Caio and Balaniuk, Remis and A dos Santos, Jefersson},
-  journal={Remote Sensing},
-  volume={12},
-  number={4},
-  pages={739},
-  year={2020},
-  publisher={Multidisciplinary Digital Publishing Institute}
-}
+       @article{nogueira2020facing,
+                title={Facing Erosion Identification in Railway Lines Using Pixel-Wise Deep-Based Approaches},
+                author={Nogueira, Keiller and LS Machado, Gabriel and HT Gama, Pedro and CV da Silva, Caio and Balaniuk, Remis and A dos Santos, Jefersson},
+                journal={Remote Sensing},
+                volume={12},
+                number={4},
+                pages={739},
+                year={2020},
+                publisher={Multidisciplinary Digital Publishing Institute}
+        }
 
 
 
